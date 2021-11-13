@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "333938604154",
+    "project_id": "test-tul-e8cfd",
+    "storage_bucket": "test-tul-e8cfd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:333938604154:android:af638f99cf1b3446b463c3",
+        "android_client_info": {
+          "package_name": "com.soytul.tul_eco"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "333938604154-l8aap8jqah3eihpc3gap8g0q7jaj0bb9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCyg0P_MZ5v94p5KE1DKh7t05r7cz4Zni4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "333938604154-l8aap8jqah3eihpc3gap8g0q7jaj0bb9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
