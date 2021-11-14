@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tul_eco/api/repository/home_repository.dart';
 import 'package:tul_eco/modules/home/bloc/home_bloc.dart';
 import 'package:tul_eco/modules/home/widgets/home_products_list.dart';
+import 'package:tul_eco/widgets/button_cart.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -51,6 +52,7 @@ class HomeView extends StatelessWidget {
           return const SizedBox();
         },
       ),
+      bottomNavigationBar: const ButtonCart(),
     );
   }
 }
