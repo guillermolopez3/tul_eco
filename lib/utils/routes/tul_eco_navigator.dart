@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:tul_eco/modules/pedido/ui/pedido_screen.dart';
 
 class TulEcoNavigator {
   static late TulEcoNavigator _instance;
@@ -13,4 +14,6 @@ class TulEcoNavigator {
       _instance = TulEcoNavigator._(navigatorKey);
 
   NavigatorState? get _navigatorState => _navigatorKey.currentState;
+
+  void goPedido() => _navigatorState?.push(PedidoPage.route());
 }
