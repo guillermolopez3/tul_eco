@@ -1,0 +1,1 @@
+enum EnumCartStatus { pending, completed }
