@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tul_eco/models/product.dart';
 import 'package:tul_eco/modules/home/widgets/home_card.dart';
+import 'package:tul_eco/widgets/card_product.dart';
 
 class HomeProductsList extends StatelessWidget {
   final List<Product> lista;
@@ -20,10 +21,22 @@ class HomeProductsList extends StatelessWidget {
             subTitle: prod.descripcion,
             img: prod.image,
             price: '${prod.price}',
-            onTap: () {},
+            onTap: () {
+              _mostrarDialog(context, prod);
+            },
           ),
         );
       },
+    );
+  }
+
+  Future<void> _mostrarDialog(BuildContext context, Product product) async {
+    showDialog(
+      barrierColor: Colors.black.withOpacity(0.8),
+      context: context,
+      builder: (_) => CardProducts(
+        product: product,
+      ),
     );
   }
 }
