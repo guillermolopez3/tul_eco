@@ -1,6 +1,8 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tul_eco/modules/home/ui/home_screen.dart';
+import 'package:tul_eco/modules/pedido/bloc/pedido_bloc.dart';
 import 'package:tul_eco/utils/routes/tul_eco_navigator.dart';
 
 void main() async {
@@ -17,14 +19,17 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     TulEcoNavigator.initNavigator(_navigatorKey);
-    return MaterialApp(
-      title: 'Tul Ecommerce',
-      navigatorKey: _navigatorKey,
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
+    return BlocProvider<PedidoBloc>(
+      create: (_) => PedidoBloc(),
+      child: MaterialApp(
+        title: 'Tul Ecommerce',
+        navigatorKey: _navigatorKey,
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+        ),
+        home: const HomePage(),
       ),
-      home: const HomePage(),
     );
   }
 }
