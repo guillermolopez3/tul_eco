@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:tul_eco/api/repository/pedido_repository.dart';
 import 'package:tul_eco/modules/home/ui/home_screen.dart';
 import 'package:tul_eco/modules/pedido/bloc/pedido_bloc.dart';
 import 'package:tul_eco/utils/routes/tul_eco_navigator.dart';
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     TulEcoNavigator.initNavigator(_navigatorKey);
     return BlocProvider<PedidoBloc>(
-      create: (_) => PedidoBloc(),
+      create: (_) => PedidoBloc(repository: PedidoRepository()),
       child: MaterialApp(
         title: 'Tul Ecommerce',
         navigatorKey: _navigatorKey,
