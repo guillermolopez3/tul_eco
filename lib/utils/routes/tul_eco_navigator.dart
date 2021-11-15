@@ -18,7 +18,6 @@ class TulEcoNavigator {
   NavigatorState? get _navigatorState => _navigatorKey.currentState;
 
   void goPedido() => _navigatorState?.push(PedidoPage.route());
-  void goSuccess() => _navigatorState?.push(SuccessScreen.route());
-  void goHome() => _navigatorState?.pushAndRemoveUntil(
-      HomePage.route(), ModalRoute.withName('Home'));
+  void goSuccess() => _navigatorState?.pushAndRemoveUntil(
+      SuccessPage.route(), ModalRoute.withName('Home'));
 }
