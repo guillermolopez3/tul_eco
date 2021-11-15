@@ -10,8 +10,8 @@ class HomePage extends StatelessWidget {
 
   static Route route() {
     return MaterialPageRoute(
-      builder: (_) => const HomePage(),
-    );
+        builder: (_) => const HomePage(),
+        settings: const RouteSettings(name: 'Home'));
   }
 
   @override

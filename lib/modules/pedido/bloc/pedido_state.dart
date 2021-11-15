@@ -1,10 +1,14 @@
 part of 'pedido_bloc.dart';
 
 class PedidoState extends Equatable {
-  final List<Cart> listCart;
+  final List<ProductCarts> listCart;
+  final Cart? cart;
+  final RemoteStatus remoteStatus;
 
   const PedidoState({
     this.listCart = const [],
+    this.cart,
+    this.remoteStatus = RemoteStatus.initial,
   });
 
   int get cantidadProductos => listCart.fold(0, (p, e) => p + e.cantidad);
@@ -23,15 +27,24 @@ class PedidoState extends Equatable {
   }
 
   PedidoState copyWith({
-    List<Cart>? lista,
+    List<ProductCarts>? lista,
+    Cart? cart,
+    RemoteStatus? remoteStatus,
   }) {
     return PedidoState(
-      listCart: lista ?? listCart,
+        listCart: lista ?? listCart,
+        cart: cart ?? this.cart,
+        remoteStatus: remoteStatus ?? this.remoteStatus);
+  }
+
+  PedidoState cleanState() {
+    return const PedidoState(
+      listCart: [],
+      cart: null,
+      remoteStatus: RemoteStatus.initial,
     );
   }
 
   @override
-  List<Object?> get props => [
-        listCart,
-      ];
+  List<Object?> get props => [listCart, cart, remoteStatus];
 }

@@ -14,7 +14,7 @@ class AddProductEvent extends PedidoEvent {
 }
 
 class RemovedProductEvent extends PedidoEvent {
-  final Cart product;
+  final ProductCarts product;
   const RemovedProductEvent(this.product);
   @override
   List<Object?> get props => [product];
@@ -22,6 +22,12 @@ class RemovedProductEvent extends PedidoEvent {
 
 class SubmitedPedido extends PedidoEvent {
   const SubmitedPedido();
+  @override
+  List<Object?> get props => [];
+}
+
+class CleanCarrito extends PedidoEvent {
+  const CleanCarrito();
   @override
   List<Object?> get props => [];
 }

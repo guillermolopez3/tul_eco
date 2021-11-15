@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tul_eco/modules/pedido/widgets/detalle_compra.dart';
 import 'package:tul_eco/modules/pedido/widgets/total_compra.dart';
+import 'package:tul_eco/widgets/button_finalizar_compra.dart';
 
 class PedidoPage extends StatelessWidget {
   const PedidoPage({Key? key}) : super(key: key);
@@ -31,10 +32,9 @@ class PedidoView extends StatelessWidget {
           DetalleCompra(),
           SizedBox(height: 10),
           TotalCompra(),
-          SizedBox(height: 10),
-          SizedBox(height: 30),
         ],
       ),
+      bottomNavigationBar: const ButtonFinalizarCompra(),
     );
   }
 }

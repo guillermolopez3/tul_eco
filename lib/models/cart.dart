@@ -1,23 +1,16 @@
 import 'package:equatable/equatable.dart';
-import 'package:tul_eco/models/product.dart';
+import 'package:tul_eco/utils/enum_cart_status.dart';
 
 class Cart extends Equatable {
-  final Product products;
-  final int cantidad;
+  final String id;
+  final EnumCartStatus status;
 
-  const Cart({required this.products, required this.cantidad});
+  Cart({required this.id, this.status = EnumCartStatus.pending});
 
-  Cart copyWith({
-    Product? products,
-    int? cantidad,
-  }) {
-    return Cart(
-      products: products ?? this.products,
-      cantidad: cantidad ?? this.cantidad,
-    );
+  Cart copyWith({String? id, EnumCartStatus? status}) {
+    return Cart(id: id ?? this.id, status: status ?? this.status);
   }
 
   @override
-  // TODO: implement props
-  List<Object?> get props => [products, cantidad];
+  List<Object?> get props => [id, status];
 }

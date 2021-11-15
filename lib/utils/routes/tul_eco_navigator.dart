@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
+import 'package:tul_eco/modules/home/ui/home_screen.dart';
 import 'package:tul_eco/modules/pedido/ui/pedido_screen.dart';
+import 'package:tul_eco/modules/success/ui/success_screen.dart';
 
 class TulEcoNavigator {
   static late TulEcoNavigator _instance;
@@ -16,4 +18,6 @@ class TulEcoNavigator {
   NavigatorState? get _navigatorState => _navigatorKey.currentState;
 
   void goPedido() => _navigatorState?.push(PedidoPage.route());
+  void goSuccess() => _navigatorState?.pushAndRemoveUntil(
+      SuccessPage.route(), ModalRoute.withName('Home'));
 }

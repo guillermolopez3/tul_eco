@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:tul_eco/models/cart.dart';
+import 'package:tul_eco/models/product_carts.dart';
 import 'package:tul_eco/modules/pedido/bloc/pedido_bloc.dart';
 
 class DetalleCompra extends StatelessWidget {
@@ -28,7 +28,7 @@ class DetalleCompra extends StatelessWidget {
 }
 
 class ItemCompra extends StatelessWidget {
-  final Cart product;
+  final ProductCarts product;
   const ItemCompra({Key? key, required this.product}) : super(key: key);
 
   @override
